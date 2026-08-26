@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry | Passo in Italia</title>
+</head>
+<body>
+
+  <!-- ===== Header & Navigation ===== -->
+  <header>
+    <h1>Passo in Italia</h1>
+    <p>Italian-French Patisserie &mdash; Sea Point, Cape Town</p>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="enquiry.html">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+
+    <h2>Custom Cake &amp; Event Enquiries</h2>
+    <p>
+      Planning a birthday, wedding, or special event? Tell us what you have
+      in mind and we'll get back to you to discuss the details.
+    </p>
+
+    <!-- Enquiry form -->
+    <form id="enquiry-form" action="#" method="post">
+
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone">
+
+      <label for="event-type">Type of Enquiry</label>
+      <select id="event-type" name="event-type" required>
+        <option value="">-- Please select --</option>
+        <option value="birthday">Birthday Cake</option>
+        <option value="wedding">Wedding Cake</option>
+        <option value="corporate">Corporate Event</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="event-date">Preferred Date</label>
+      <input type="date" id="event-date" name="event-date">
+
+      <label for="message">Tell us about your event</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Submit Enquiry</button>
+
+    </form>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2026 Passo in Italia. All rights reserved.</p>
+    <p>Sea Point, Cape Town | <a href="contact.html">Contact Us</a></p>
+  </footer>
+
+</body>
+</html>
