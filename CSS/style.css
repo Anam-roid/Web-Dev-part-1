@@ -1,0 +1,435 @@
+/* =====================================================
+   Passo in Italia — Main Stylesheet
+   Part 2: CSS Styling and Responsive Design
+   ===================================================== */
+
+/* -----------------------------------------------------
+   1. CSS Variables (root) — colours, fonts, spacing
+   Using variables keeps the cascade efficient: change a
+   value once here and it updates everywhere it's used.
+   ----------------------------------------------------- */
+:root {
+  --color-terracotta: #C0562D;
+  --color-terracotta-dark: #A3441F;
+  --color-cream: #FDF6EC;
+  --color-cream-dark: #F4E9D8;
+  --color-olive: #6B7048;
+  --color-olive-dark: #4C5033;
+  --color-text: #3A2E28;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', Arial, sans-serif;
+
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 3rem;
+
+  --radius: 8px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* -----------------------------------------------------
+   2. Reset & Base Styles
+   ----------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-cream);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+a {
+  color: var(--color-terracotta);
+  text-decoration: none;
+}
+
+/* -----------------------------------------------------
+   3. Typography
+   ----------------------------------------------------- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: var(--color-olive-dark);
+}
+
+h1 {
+  font-size: 2.25rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
+  max-width: 65ch;
+}
+
+/* -----------------------------------------------------
+   4. Layout Structure — Header & Navigation
+   ----------------------------------------------------- */
+header {
+  background-color: var(--color-terracotta);
+  color: var(--color-cream);
+  padding: var(--spacing-md) var(--spacing-md) 0;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--color-cream);
+}
+
+header p {
+  color: var(--color-cream-dark);
+  margin: 0 auto var(--spacing-md);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+  list-style: none;
+  padding: var(--spacing-sm) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+nav a {
+  color: var(--color-cream);
+  font-weight: 700;
+  padding: 0.25rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  border-bottom-color: var(--color-cream);
+}
+
+nav a:active {
+  color: var(--color-cream-dark);
+}
+
+/* -----------------------------------------------------
+   5. Layout Structure — Main Content
+   ----------------------------------------------------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+main > h2 {
+  text-align: center;
+}
+
+main > p {
+  text-align: center;
+  margin: 0 auto var(--spacing-lg);
+}
+
+section {
+  margin-bottom: var(--spacing-lg);
+}
+
+/* -----------------------------------------------------
+   6. Homepage — Hero & Intro
+   ----------------------------------------------------- */
+#hero {
+  text-align: center;
+}
+
+#hero img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--spacing-md);
+}
+
+#intro {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#intro p {
+  margin: 0 auto;
+}
+
+/* -----------------------------------------------------
+   7. Buttons / Call-to-action links
+   ----------------------------------------------------- */
+.btn,
+#hero a,
+button[type="submit"] {
+  display: inline-block;
+  background-color: var(--color-olive);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-weight: 700;
+  padding: 0.75rem 1.75rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn:hover,
+#hero a:hover,
+button[type="submit"]:hover {
+  background-color: var(--color-olive-dark);
+}
+
+.btn:active,
+#hero a:active,
+button[type="submit"]:active {
+  transform: scale(0.97);
+}
+
+.btn:focus,
+#hero a:focus,
+button[type="submit"]:focus {
+  outline: 3px solid var(--color-terracotta);
+  outline-offset: 2px;
+}
+
+/* -----------------------------------------------------
+   8. About Page — Story & Mission/Vision
+   ----------------------------------------------------- */
+#our-story {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+}
+
+#our-story img {
+  box-shadow: var(--shadow);
+}
+
+#mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  background-color: var(--color-cream-dark);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius);
+}
+
+/* -----------------------------------------------------
+   9. Products Page — Product Card Grid
+   All product sections share the .product-card class,
+   so this ONE rule block styles all five cards.
+   ----------------------------------------------------- */
+.product-card {
+  background-color: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: var(--spacing-md);
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* -----------------------------------------------------
+   10. Contact Page — Location Cards & Map
+   ----------------------------------------------------- */
+#locations {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.location {
+  background-color: white;
+  border-left: 4px solid var(--color-terracotta);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-md);
+}
+
+#map iframe {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* -----------------------------------------------------
+   11. Forms — Enquiry & Contact
+   Shared tag selectors mean one rule styles every label,
+   input, select, and textarea across both forms.
+   ----------------------------------------------------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  background-color: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+label {
+  font-weight: 700;
+  color: var(--color-olive-dark);
+}
+
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.6rem;
+  border: 1px solid var(--color-cream-dark);
+  border-radius: var(--radius);
+  background-color: var(--color-cream);
+  color: var(--color-text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-terracotta);
+  outline-offset: 1px;
+  background-color: white;
+}
+
+form button[type="submit"] {
+  align-self: flex-start;
+  margin-top: var(--spacing-sm);
+}
+
+/* -----------------------------------------------------
+   12. Footer
+   ----------------------------------------------------- */
+footer {
+  background-color: var(--color-olive-dark);
+  color: var(--color-cream-dark);
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+footer a {
+  color: var(--color-cream);
+  font-weight: 700;
+}
+
+/* =====================================================
+   13. Responsive Design — Breakpoints
+   Desktop-first: base styles above are the desktop
+   layout, and these media queries adapt it down for
+   tablet and mobile screens.
+   ===================================================== */
+
+/* --- Tablet: 768px and below --- */
+@media (max-width: 768px) {
+
+  h1 {
+    font-size: 1.85rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  nav ul {
+    gap: var(--spacing-sm);
+  }
+
+  #our-story {
+    grid-template-columns: 1fr;
+  }
+
+  #mission-vision {
+    grid-template-columns: 1fr;
+    padding: var(--spacing-md);
+  }
+
+  .product-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .product-card img {
+    height: 220px;
+  }
+
+  #locations {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Mobile: 480px and below --- */
+@media (max-width: 480px) {
+
+  main {
+    padding: var(--spacing-md) 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #hero img {
+    max-height: 260px;
+  }
+
+  .btn,
+  #hero a,
+  button[type="submit"] {
+    width: 100%;
+  }
+
+  form {
+    padding: var(--spacing-md);
+  }
+}
