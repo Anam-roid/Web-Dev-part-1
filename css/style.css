@@ -1,36 +1,4 @@
-/* =====================================================
-   Passo in Italia — Main Stylesheet
-   Part 2: CSS Styling and Responsive Design
-   ===================================================== */
-
-/* -----------------------------------------------------
-   1. CSS Variables (root) — colours, fonts, spacing
-   Using variables keeps the cascade efficient: change a
-   value once here and it updates everywhere it's used.
-   ----------------------------------------------------- */
-:root {
-  --color-terracotta: #C0562D;
-  --color-terracotta-dark: #A3441F;
-  --color-cream: #FDF6EC;
-  --color-cream-dark: #F4E9D8;
-  --color-olive: #6B7048;
-  --color-olive-dark: #4C5033;
-  --color-text: #3A2E28;
-
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Lato', Arial, sans-serif;
-
-  --spacing-sm: 0.75rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 3rem;
-
-  --radius: 8px;
-  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* -----------------------------------------------------
-   2. Reset & Base Styles
-   ----------------------------------------------------- */
+/* ===== Base Styles & Typography ===== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -38,398 +6,316 @@
 }
 
 body {
-  font-family: var(--font-body);
-  font-size: 1rem;
+  font-family: 'Lato', sans-serif;
+  color: #2c221e;
+  background-color: #fdfbf7;
   line-height: 1.6;
-  color: var(--color-text);
-  background-color: var(--color-cream);
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius);
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  color: #1a120b;
 }
 
 a {
-  color: var(--color-terracotta);
+  color: #a35c36;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* -----------------------------------------------------
-   3. Typography
-   ----------------------------------------------------- */
-h1, h2, h3 {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  color: var(--color-olive-dark);
+a:hover {
+  color: #743e21;
+  text-decoration: underline;
 }
 
-h1 {
-  font-size: 2.25rem;
-}
-
-h2 {
-  font-size: 1.75rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-h3 {
-  font-size: 1.25rem;
-  margin-bottom: var(--spacing-sm);
-}
-
-p {
-  margin-bottom: var(--spacing-sm);
-  max-width: 65ch;
-}
-
-/* -----------------------------------------------------
-   4. Layout Structure — Header & Navigation
-   ----------------------------------------------------- */
+/* ===== Header & Navigation ===== */
 header {
-  background-color: var(--color-terracotta);
-  color: var(--color-cream);
-  padding: var(--spacing-md) var(--spacing-md) 0;
+  background-color: #f5ebe0;
+  padding: 2rem 1rem;
   text-align: center;
+  border-bottom: 2px solid #e3d5c8;
 }
 
 header h1 {
-  color: var(--color-cream);
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  letter-spacing: 1px;
 }
 
 header p {
-  color: var(--color-cream-dark);
-  margin: 0 auto var(--spacing-md);
+  font-style: italic;
+  color: #635047;
+  margin-bottom: 1.5rem;
 }
 
 nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--spacing-md);
   list-style: none;
-  padding: var(--spacing-sm) 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 nav a {
-  color: var(--color-cream);
   font-weight: 700;
-  padding: 0.25rem 0;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  color: #4a3b32;
 }
 
-nav a:hover,
-nav a:focus {
-  border-bottom-color: var(--color-cream);
+nav a:hover {
+  color: #a35c36;
 }
 
-nav a:active {
-  color: var(--color-cream-dark);
-}
-
-/* -----------------------------------------------------
-   5. Layout Structure — Main Content
-   ----------------------------------------------------- */
+/* ===== Main Layout & Sections ===== */
 main {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: var(--spacing-lg) var(--spacing-md);
-}
-
-main > h2 {
-  text-align: center;
-}
-
-main > p {
-  text-align: center;
-  margin: 0 auto var(--spacing-lg);
+  max-width: 900px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
 }
 
 section {
-  margin-bottom: var(--spacing-lg);
+  margin-bottom: 3rem;
 }
 
-/* -----------------------------------------------------
-   6. Homepage — Hero & Intro
-   ----------------------------------------------------- */
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Hero Section */
 #hero {
   text-align: center;
 }
 
 #hero img {
   width: 100%;
-  max-height: 420px;
+  max-height: 450px;
   object-fit: cover;
-  box-shadow: var(--shadow);
-  margin-bottom: var(--spacing-md);
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+#hero h2 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+#hero p {
+  font-size: 1.1rem;
+  color: #59443b;
+  margin-bottom: 1.5rem;
+}
+
+#hero a {
+  display: inline-block;
+  background-color: #a35c36;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+#hero a:hover {
+  background-color: #834728;
+  text-decoration: none;
+}
+
+/* Intro Section */
 #intro {
-  max-width: 700px;
-  margin: 0 auto;
   text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
 }
 
 #intro p {
-  margin: 0 auto;
+  font-size: 1.15rem;
+  color: #4a3b32;
 }
 
-/* -----------------------------------------------------
-   7. Buttons / Call-to-action links
-   ----------------------------------------------------- */
-.btn,
-#hero a,
-button[type="submit"] {
-  display: inline-block;
-  background-color: var(--color-olive);
-  color: var(--color-cream);
-  font-family: var(--font-body);
-  font-weight: 700;
-  padding: 0.75rem 1.75rem;
-  border: none;
-  border-radius: var(--radius);
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.2s ease, transform 0.15s ease;
-}
-
-.btn:hover,
-#hero a:hover,
-button[type="submit"]:hover {
-  background-color: var(--color-olive-dark);
-}
-
-.btn:active,
-#hero a:active,
-button[type="submit"]:active {
-  transform: scale(0.97);
-}
-
-.btn:focus,
-#hero a:focus,
-button[type="submit"]:focus {
-  outline: 3px solid var(--color-terracotta);
-  outline-offset: 2px;
-}
-
-/* -----------------------------------------------------
-   8. About Page — Story & Mission/Vision
-   ----------------------------------------------------- */
-#our-story {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: var(--spacing-lg);
-  align-items: center;
-}
-
-#our-story img {
-  box-shadow: var(--shadow);
-}
-
-#mission-vision {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-lg);
-  background-color: var(--color-cream-dark);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius);
-}
-
-/* -----------------------------------------------------
-   9. Products Page — Product Card Grid
-   All product sections share the .product-card class,
-   so this ONE rule block styles all five cards.
-   ----------------------------------------------------- */
+/* ===== Products Page Grid/Cards ===== */
 .product-card {
-  background-color: white;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: var(--spacing-md);
-  margin-bottom: var(--spacing-lg);
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: var(--spacing-md);
+  background: #ffffff;
+  border: 1px solid #e3d5c8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1.5rem;
   align-items: center;
-  transition: transform 0.2s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-4px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 .product-card img {
-  width: 100%;
-  height: 180px;
+  width: 220px;
+  height: 160px;
   object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
 }
 
-/* -----------------------------------------------------
-   10. Contact Page — Location Cards & Map
-   ----------------------------------------------------- */
+.product-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  color: #59443b;
+}
+
+/* ===== About Page ===== */
+#our-story img {
+  float: right;
+  width: 320px;
+  border-radius: 6px;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+#our-story p {
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+}
+
+#mission-vision {
+  clear: both;
+  margin-top: 3rem;
+}
+
+#mission-vision h2 {
+  text-align: left;
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* ===== Contact & Enquiry Forms ===== */
 #locations {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-md);
+  gap: 2rem;
+  margin-bottom: 3rem;
 }
 
 .location {
-  background-color: white;
-  border-left: 4px solid var(--color-terracotta);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: var(--spacing-md);
+  background: #f5ebe0;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #a35c36;
 }
 
-#map iframe {
-  width: 100%;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+.location h3 {
+  margin-bottom: 0.5rem;
 }
 
-/* -----------------------------------------------------
-   11. Forms — Enquiry & Contact
-   Shared tag selectors mean one rule styles every label,
-   input, select, and textarea across both forms.
-   ----------------------------------------------------- */
+.location p {
+  margin-bottom: 0.3rem;
+  color: #4a3b32;
+}
+
 form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
-  background-color: white;
-  padding: var(--spacing-lg);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  max-width: 600px;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid #e3d5c8;
+  max-width: 650px;
   margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
 }
 
 label {
+  display: block;
   font-weight: 700;
-  color: var(--color-olive-dark);
+  margin-bottom: 0.4rem;
+  color: #3b2c24;
 }
 
-input,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
 select,
 textarea {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  padding: 0.6rem;
-  border: 1px solid var(--color-cream-dark);
-  border-radius: var(--radius);
-  background-color: var(--color-cream);
-  color: var(--color-text);
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #d4c3b3;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  background-color: #fdfbf7;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  outline: 2px solid var(--color-terracotta);
-  outline-offset: 1px;
-  background-color: white;
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #a35c36;
+  background-color: #ffffff;
 }
 
-form button[type="submit"] {
-  align-self: flex-start;
-  margin-top: var(--spacing-sm);
-}
-
-/* -----------------------------------------------------
-   12. Footer
-   ----------------------------------------------------- */
-footer {
-  background-color: var(--color-olive-dark);
-  color: var(--color-cream-dark);
-  text-align: center;
-  padding: var(--spacing-md);
-}
-
-footer a {
-  color: var(--color-cream);
+button[type="submit"] {
+  background-color: #a35c36;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
   font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  width: 100%;
 }
 
-/* =====================================================
-   13. Responsive Design — Breakpoints
-   Desktop-first: base styles above are the desktop
-   layout, and these media queries adapt it down for
-   tablet and mobile screens.
-   ===================================================== */
+button[type="submit"]:hover {
+  background-color: #834728;
+}
 
-/* --- Tablet: 768px and below --- */
-@media (max-width: 768px) {
+#map {
+  margin-bottom: 3rem;
+}
 
-  h1 {
-    font-size: 1.85rem;
-  }
+#map iframe {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
 
-  h2 {
-    font-size: 1.5rem;
-  }
+/* ===== Footer ===== */
+footer {
+  background-color: #f5ebe0;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-top: 2px solid #e3d5c8;
+  color: #635047;
+  font-size: 0.9rem;
+}
 
-  nav ul {
-    gap: var(--spacing-sm);
-  }
+footer p {
+  margin-bottom: 0.4rem;
+}
 
-  #our-story {
-    grid-template-columns: 1fr;
-  }
-
-  #mission-vision {
-    grid-template-columns: 1fr;
-    padding: var(--spacing-md);
-  }
-
+/* ===== Responsive Design for Smaller Screens ===== @media (max-width: 768px) {
   .product-card {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     text-align: center;
   }
 
   .product-card img {
-    height: 220px;
+    width: 100%;
+    height: 200px;
+  }
+
+  #our-story img {
+    float: none;
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 1rem;
   }
 
   #locations {
     grid-template-columns: 1fr;
   }
-}
-
-/* --- Mobile: 480px and below --- */
-@media (max-width: 480px) {
-
-  main {
-    padding: var(--spacing-md) 1rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  #hero img {
-    max-height: 260px;
-  }
-
-  .btn,
-  #hero a,
-  button[type="submit"] {
-    width: 100%;
-  }
-
-  form {
-    padding: var(--spacing-md);
-  }
-}
